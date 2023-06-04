@@ -36,12 +36,12 @@ def get_user_attack():
         input_attack = input('Введи тип атаки: ').lower()
         attack_value = attacks_types[input_attack]()
         print(f'Количество очков твоей атаки: {attack_value}.')
-        total += 1
+        total += attack_value
     return total
 
 
 def run_game():
-    user_total_attack = get_user_attack()
+q    user_total_attack = get_user_attack()
     enemy_health = set_enemy_health()
     print(f'Тобой нанесён урон противнику равный {user_total_attack}.')
     print(f'Очки здоровья противника до твоей атаки: {enemy_health}.')
@@ -50,8 +50,8 @@ def run_game():
     else:
         print('В этот раз не повезло :( Бой проигран.')
     yes_no = {
-        'Y': True,
-        'N': False,
+        'y': True,
+        'n': False,
     }
     replay = input('Чтобы сыграть ещё раз, введи "y"; '
                    'если не хочешь продолжать игру, введи "n": ')
